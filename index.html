@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css" />
+<script data-require="angular.js@1.3.0" data-semver="1.3.0" src="https://code.angularjs.org/1.3.0/angular.js"></script>
+	<script src="https://code.angularjs.org/1.3.0/angular-animate.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+<mydirective></mydirective>
+
+
+<div ng-controller="myCtrl" ng-init="checked=true">
+	
+
+
+	<div id="inputContainer" class="input-container" ng-class="{'focus':focus===true, 'blur':blur===true}" ng-show="checked">
+	  <label for="inputField">Namn</label>
+	  <input id="inputField" type="{{visiblePassword ? 'text' : 'password'}}" ng-focus="onFocus()" ng-blur="onBlur()" placeholder="{{placeholder}}" ng-model="userFirstName"/>
+	  <button ng-click="toggleVisibility()">{{visiblePassword ? 'dölj' : 'visa'}}</button>
+	</div>
+	
+	<br>
+	Ditt namn är: <br>
+	{{userFirstName}}
+	<br>
+	<label>
+    <input type="checkbox" ng-model="checked"> Show
+  	</label>
+  	
+  	
+
+</div>
+
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
